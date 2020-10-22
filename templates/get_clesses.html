@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><a href="add_classes_data">添加数据</a></div>
+<div>  <table border="1">
+        <tr>
+            <th>id</th>
+            <th>名称</th>
+            <th>操作</th>
+        </tr>
+    {% for list in title %}
+        <tr>
+
+            <td>{{ list.id }}</td>
+            <td>{{ list.title }}</td>
+            <td><a href=" del_student_data?nid={{ list.id }}">删除</a>|<a href="updata_student_Data?nid={{ list.id }}">编辑</a></td>
+
+        </tr>
+    {% endfor %}
+    </table></div>
+
+
+
+</body>
+</html>

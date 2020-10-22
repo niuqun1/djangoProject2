@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form  method="post" action="/updata_student">
+        {% csrf_token %}
+        <p>学生姓名： <input type="text" name="username" value="{{ data.username }}"></p>
+        <p> 学生年龄： <input type="text" name="age" value="{{ data.age }}"></p>
+        <p> 学生性别： 男 <input type="checkbox" name="sex" value="0"> 女 <input type="checkbox" name="sex" value="1"></p>
+        <p><select name="cs" >
+            <option value="{{ classes.id }}",selected="selected">{{ classes.title }}</option>
+            {% for data in data_class %}
+                <option value="{{ data.id }}">{{ data.title }}</option>
+            {% endfor %}
+
+        </select></p>
+
+        <p> <input type="submit"></p>
+
+
+
+    </form>
+
+</body>
+</html>
